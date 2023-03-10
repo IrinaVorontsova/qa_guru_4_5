@@ -36,10 +36,21 @@ def test_find_suitable_user():
         {"name": "Maria", "age": 18},
     ]
     # TODO найдите пользователя с именем "Olga"
-    suiable_user = None
+    suiable_user = []
+
+    for user in users:
+        if user['name'] == 'Olga':
+            suiable_user.append(user)
+    suiable_user = suiable_user[0]
+
     assert suiable_user == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
-    suiable_users = None
+    suiable_users = []
+
+    for user in users:
+        if user['age'] <= 18:
+            suiable_users.append(user)
+
     assert suiable_users == [
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
